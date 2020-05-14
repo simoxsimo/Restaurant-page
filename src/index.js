@@ -82,7 +82,6 @@ const dom = (() => {
         div1.appendChild(p1);
         p2.appendChild(document.createTextNode(`Price: ${serving.price}Dh`));
         div1.appendChild(p2);
-        // div1.setAttribute('id', `serving${i + 1}-${j}`)
         div.appendChild(div1);
       });
     });
