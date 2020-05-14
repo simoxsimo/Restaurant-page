@@ -1,4 +1,5 @@
 import home from './home';
+import menu from './menu';
 
 const dom = ( () => {
   const selectors = {
@@ -32,17 +33,17 @@ const dom = ( () => {
     getContentSelector().appendChild(a);
   }
 
-  // Add Home page title inside content
-  const addHomePageTitle = () => {
+  // Add page title inside content
+  const addPageTitle = (title) => {
       const h1 = document.createElement('h1');
-      h1.appendChild(document.createTextNode(home.title()));
+      h1.appendChild(document.createTextNode(title));
       getContentSelector().appendChild(h1);
   }
-  // Add a brief description after Home page title
-  const addHomePageDesc = () => {
-      const p = document.createElement('p');
-      p.appendChild(document.createTextNode(home.description()));
-      getContentSelector().appendChild(p);
+  // Add a brief description after page title
+  const addPageDesc = (description, element) => {
+      const h5 = document.createElement('h5');
+      h5.appendChild(document.createTextNode(description));
+      element.appendChild(h5);
   }
 
   // implementing getters/setters of selectors to select the links
@@ -54,7 +55,7 @@ const dom = ( () => {
       // return selectors.links;
   // }
 
-  // refresh page for re-render
+  // empty page data for a re-render
   const refreshPage = () => {
     console.log(getContentSelector());
     getContentSelector().parentNode.removeChild(getContentSelector());
@@ -68,8 +69,30 @@ const dom = ( () => {
     addLinks('Menu');
     addLinks('Contact');
     // setLinksSelector();
-    addHomePageTitle();
-    addHomePageDesc();
+    addPageTitle(home.title());
+    addPageDesc(home.description(), getContentSelector());
+  }
+
+  // add divs that contains menu courses
+  const addCoursesToMenuPage = (courses) => {
+    const div = document.createElement('div');
+    Object.entries(courses).forEach( prop => {
+      addPageDesc(prop[0], div);
+      prop[1].forEach( serving => {
+        const div1 = document.createElement('div');
+        const h6 = document.createElement('h6');
+        const p1 = document.createElement('p');
+        const p2 = document.createElement('p');
+        h6.appendChild(document.createTextNode(serving.title));
+        div1.appendChild(h6);
+        p1.appendChild(document.createTextNode(serving.description));
+        div1.appendChild(p1);
+        p2.appendChild(document.createTextNode(`Price: ${serving.price}Dh`));
+        div1.appendChild(p2);
+        div.appendChild(div1);
+      } );
+    } );
+    getContentSelector().appendChild(div);
   }
 
   // render Menu page
@@ -80,6 +103,8 @@ const dom = ( () => {
     addLinks('Menu');
     addLinks('Contact');
     // setLinksSelector();
+    addPageTitle(menu.title());
+    addCoursesToMenuPage(menu.courses);
   }
 
   // render Contact page
@@ -134,6 +159,7 @@ const dom = ( () => {
     menuDispatcher();
     contactDispatcher();
   }
+
   return { render };
 })();
 
