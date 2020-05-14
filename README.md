@@ -7,7 +7,7 @@
 - Javascript & Webpack
 - Css
 
-## **_[Live Demo](#)_**
+## **_[Live Demo](https://simoxsimo.github.io/Restaurant-page/)_**
 
 # Prerequisites
 
