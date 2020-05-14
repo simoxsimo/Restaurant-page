@@ -1,5 +1,6 @@
 import home from './home';
 import menu from './menu';
+import contact from './contact';
 
 const dom = ( () => {
   const selectors = {
@@ -46,15 +47,6 @@ const dom = ( () => {
       element.appendChild(h5);
   }
 
-  // implementing getters/setters of selectors to select the links
-  // const setLinksSelector = () => {
-    // selectors.links = document.querySelectorAll('a');
-  // }
-// 
-  // const getLinksSelector = () => {
-      // return selectors.links;
-  // }
-
   // empty page data for a re-render
   const refreshPage = () => {
     console.log(getContentSelector());
@@ -73,7 +65,7 @@ const dom = ( () => {
     addPageDesc(home.description(), getContentSelector());
   }
 
-  // add divs that contains menu courses
+  // add elements that contains menu courses
   const addCoursesToMenuPage = (courses) => {
     const div = document.createElement('div');
     Object.entries(courses).forEach( prop => {
@@ -107,6 +99,15 @@ const dom = ( () => {
     addCoursesToMenuPage(menu.courses);
   }
 
+  // add elements that contains contact info
+  const addContactInfoToContactPage = () => {
+    const div = document.createElement('div');
+    addPageDesc(contact.address(), div);
+    addPageDesc(contact.telephone(), div);
+    addPageDesc(contact.email(), div);
+    getContentSelector().appendChild(div);
+  } 
+
   // render Contact page
   const renderContact = (e) => {
     e.preventDefault();
@@ -115,6 +116,8 @@ const dom = ( () => {
     addLinks('Menu');
     addLinks('Contact');
     // setLinksSelector();
+    addPageTitle(contact.title());
+    addContactInfoToContactPage();
   }
 
   // render the page according to the dispatched event
