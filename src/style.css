@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Special+Elite&family=Unica+One&display=swap');
+
+body {
+    background-color: rgb(37, 37, 37);
+    color: rgb(226, 224, 220);
+}
+
+h1,
+h2,
+h6,
+h5 {
+    font-family: 'Unica One', cursive;
+}
+
+h1 {
+    margin-top: 30vh;
+    margin-left: 10vw;
+    font-size: 120px;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 60px;
+    margin-left: 10vw;
+}
+
+#home-title {
+    margin: 0 25vw 3vh 10vw;
+    font-family: 'Special Elite', cursive;
+    text-align: end;
+    font-size: 14px;
+}
+
+a {
+    font-size: 25px;
+    font-family: 'Poiret One', cursive;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#menu1,
+#home2,
+#home3 {
+    margin-left: 68vw;
+}
+
+#contact1,
+#contact2,
+#menu3 {
+    margin-left: 2vw;
+}
+
+#courses {
+    margin-left: 15vw;
+}
+
+#courses h5 {
+    margin-left: 60vw;
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 20px;
+    padding: 0 5px 2px 5px;
+    border-left: 8px solid aliceblue;
+    border-bottom: 1px solid aliceblue;
+}
+
+#courses h6 {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+#courses p {
+    font-family: 'Special Elite', cursive;
+    margin-left: 5vw;
+}
+
+#contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+#contact-address {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+#contact-tel {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#contact-email {
+    font-size: 22px;
+    margin-top: 5px;
+}
