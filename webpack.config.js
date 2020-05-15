@@ -1,7 +1,9 @@
 const path = require('path');
 // generate an index.html file
+// eslint-disable-next-line import/no-unresolved
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // clean the dist folder before each build
+// eslint-disable-next-line import/no-unresolved
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
